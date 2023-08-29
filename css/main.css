@@ -7,12 +7,12 @@ body,
     width: 100%;
     margin: 0;
     padding: 0;
-    font-size: 16pt;
+    font-size: 16px;
 }
 
 .muit-screen-small
 {
-    font-size: 1.2em;
+    font-size: 2em;
 }
 
 .muit-screen-large
