@@ -1,0 +1,60 @@
+html,
+body,
+#app,
+.muit-content
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16pt;
+}
+
+.muit-screen-small
+{
+    font-size: 1.2em;
+}
+
+.muit-screen-large
+{
+    font-size: 1em;
+}
+
+.muit-screen-portrait
+{
+    display: grid;
+    grid-template-areas:
+        "MAP"
+        "FIT"
+        "WF";
+    grid-template-rows: 1fr auto auto;
+    grid-template-columns: 1fr;
+}
+
+.muit-screen-landscape
+{
+    display: grid;
+    grid-template-areas:
+        "WF MAP"
+        "WF FIT";
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
+}
+
+.muit-panel-map
+{
+    grid-area: MAP;
+    background-color: blue;
+}
+
+.muit-panel-workflow
+{
+    grid-area: WF;
+    background-color: crimson;
+}
+
+.muit-panel-fit
+{
+    grid-area: FIT;
+    background-color: darkgreen;
+}
