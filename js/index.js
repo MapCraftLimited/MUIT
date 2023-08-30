@@ -18,7 +18,7 @@ require(
                     small: false,
                     portrait: false
                 },
-                activeMenuPanel: 0
+                activeMenuPanel: 1
             };
         },
 
