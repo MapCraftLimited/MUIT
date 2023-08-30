@@ -46,13 +46,13 @@ require(
 
             setupMap()
             {
-                let map = new Map({ basemap: "topo-vector" });
+                let map = new Map({ basemap: "satellite" });
                 let view = new MapView(
                 {
                     container: "map",
                     map: map,
-                    zoom: 10,
-                    center: [15, 65]
+                    zoom: 16,
+                    center: [-6.8, 54.7]
                 });
             }
         }
