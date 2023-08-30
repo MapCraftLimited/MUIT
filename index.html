@@ -29,10 +29,10 @@
                     <div>GSAA</div>
                 </div>
                 <div class="muit-panel-menu">
-                    <div v-bind:active="activeMenuPanel === 0 ? 1 : 0" v-on:click="activeMenuPanel = 0"><img src="images/want.svg" /></div>     
-                    <div v-bind:active="activeMenuPanel === 1 ? 1 : 0" v-on:click="activeMenuPanel = 1"><img src="images/layers.svg" /></div>                    
-                    <div v-bind:active="activeMenuPanel === 2 ? 1 : 0" v-on:click="activeMenuPanel = 2"><img src="images/workflow.svg" /></div>
-                    <div v-bind:active="showFIT ? 1 : 0" v-on:click="showFIT = !showFIT"><img src="images/fit.svg" /></div>
+                    <div v-bind:active="activeMenuPanel === 0 ? 1 : 0" v-on:click="activeMenuPanel = activeMenuPanel !== 0 ? 0 : null"><img src="images/want.svg" /></div>     
+                    <div v-bind:active="activeMenuPanel === 1 ? 1 : 0" v-on:click="activeMenuPanel = activeMenuPanel !== 1 ? 1 : null"><img src="images/layers.svg" /></div>                    
+                    <div v-bind:active="activeMenuPanel === 2 ? 1 : 0" v-on:click="activeMenuPanel = activeMenuPanel !== 2 ? 2 : null"><img src="images/workflow.svg" /></div>
+                    <div v-bind:active="(manualShowFIT === null && !screen.portrait) || manualShowFIT ? 1 : 0" v-on:click="manualShowFIT = !manualShowFIT"><img src="images/fit.svg" /></div>
                 </div>
                 <div class="muit-panel-map">
                     <div id="map"></div>
@@ -59,7 +59,7 @@
                         <calcite-button>Next</calcite-button>
                     </div>
                 </div>
-                <div class="muit-panel-fit" v-if="showFIT">
+                <div class="muit-panel-fit" v-if="(manualShowFIT === null && !screen.portrait) || manualShowFIT">
                     <table>
                         <thead>
                             <th>ID</th>
