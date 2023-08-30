@@ -117,6 +117,12 @@ body,
     border-right: 3px solid #007535;
 }
 
+.muit-panel-menu img
+{
+    height: 25px;
+    width: 25px;
+}
+
 .muit-panel-menu img:hover
 {
     opacity: 0.8;
