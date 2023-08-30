@@ -147,7 +147,7 @@ body,
 .muit-screen-portrait .muit-panel-layers
 {
     border-top: 1px solid #d1d1d1;
-    max-height: 33vh;
+    height: 50vh;
 }
 
 .muit-screen-landscape .muit-panel-workflow,
@@ -160,7 +160,7 @@ body,
 .muit-panel-fit
 {
     grid-area: FIT;
-    max-height: 25vh;
+    max-height: 15vh;
     overflow: auto;
 }
 

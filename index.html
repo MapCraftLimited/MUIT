@@ -32,17 +32,24 @@
                     <div v-bind:active="activeMenuPanel === 0 ? 1 : 0" v-on:click="activeMenuPanel = 0"><img src="images/want.svg" /></div>     
                     <div v-bind:active="activeMenuPanel === 1 ? 1 : 0" v-on:click="activeMenuPanel = 1"><img src="images/layers.svg" /></div>                    
                     <div v-bind:active="activeMenuPanel === 2 ? 1 : 0" v-on:click="activeMenuPanel = 2"><img src="images/workflow.svg" /></div>
+                    <div v-bind:active="showFIT ? 1 : 0" v-on:click="showFIT = !showFIT"><img src="images/fit.svg" /></div>
                 </div>
                 <div class="muit-panel-map">
                     <div id="map"></div>
                 </div>
                 <div class="muit-panel-layers" v-if="activeMenuPanel === 0">
+                    <div class="muit-workflow-title">I Want To...</div>
+                    <div>
+                        Nunc nisi leo, mattis a mi vel, sagittis varius dolor. Nullam tincidunt rhoncus orci in dignissim. Donec quis vehicula massa, quis posuere metus. Sed congue hendrerit consectetur. Cras lacinia tempus porttitor. Donec accumsan feugiat libero at ullamcorper. Mauris tincidunt velit non massa iaculis, id gravida lacus placerat. Suspendisse nisi sapien, eleifend sed faucibus ut, euismod id diam.
+                    </div>
+                </div>
+                <div class="muit-panel-layers" v-if="activeMenuPanel === 1">
                     <div class="muit-workflow-title">Layer List</div>
                     <div>
                         Nunc nisi leo, mattis a mi vel, sagittis varius dolor. Nullam tincidunt rhoncus orci in dignissim. Donec quis vehicula massa, quis posuere metus. Sed congue hendrerit consectetur. Cras lacinia tempus porttitor. Donec accumsan feugiat libero at ullamcorper. Mauris tincidunt velit non massa iaculis, id gravida lacus placerat. Suspendisse nisi sapien, eleifend sed faucibus ut, euismod id diam.
                     </div>
                 </div>
-                <div class="muit-panel-workflow" v-if="activeMenuPanel === 1">
+                <div class="muit-panel-workflow" v-if="activeMenuPanel === 2">
                     <div class="muit-workflow-title">Make A Change</div>
                     <div>
                         Nunc nisi leo, mattis a mi vel, sagittis varius dolor. Nullam tincidunt rhoncus orci in dignissim. Donec quis vehicula massa, quis posuere metus. Sed congue hendrerit consectetur. Cras lacinia tempus porttitor. Donec accumsan feugiat libero at ullamcorper. Mauris tincidunt velit non massa iaculis, id gravida lacus placerat. Suspendisse nisi sapien, eleifend sed faucibus ut, euismod id diam.
@@ -52,7 +59,7 @@
                         <calcite-button>Next</calcite-button>
                     </div>
                 </div>
-                <div class="muit-panel-fit">
+                <div class="muit-panel-fit" v-if="showFIT">
                     <table>
                         <thead>
                             <th>ID</th>

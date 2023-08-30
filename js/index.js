@@ -18,13 +18,23 @@ require(
                     small: false,
                     portrait: false
                 },
-                activeMenuPanel: 1
+                activeMenuPanel: null,
+                showFIT: true
             };
         },
 
         mounted()
         {
             this.init();
+        },
+
+        watch:
+        {
+            "screen.portrait"()
+            {
+                if(this.screen.portrait && this.activeMenuPanel !== null)
+                    this.showFIT = false;
+            }
         },
 
         methods:
