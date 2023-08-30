@@ -8,6 +8,9 @@
         <title>MUIT - Map User Interface Template</title>
 
         <link rel="icon" href="images/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/jquery.js"></script>
@@ -16,8 +19,14 @@
     <body>
         <div id="app">
             <div v-bind:class="{ 'muit-content': true, 'muit-screen-small': screen.small, 'muit-screen-large': !screen.small, 'muit-screen-portrait': screen.portrait, 'muit-screen-landscape': !screen.portrait }">
-                <div class="muit-panel-banner">BANNER</div>
-                <div class="muit-panel-menu">MENU</div>
+                <div class="muit-panel-banner">
+                    <img class="muit-banner-logo" src="images/logo.svg" />
+                    <div>Small Woodland Grant Scheme</div>
+                </div>
+                <div class="muit-panel-menu">
+                    <img src="images/layers.svg" />
+                    <img src="images/workflow.svg" />
+                </div>
                 <div class="muit-panel-map">MAP MAP MAP</div>
                 <div class="muit-panel-workflow">WF WF WF WF WF</div>
                 <div class="muit-panel-fit">FIT FIT FIT</div>

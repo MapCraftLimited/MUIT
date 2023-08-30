@@ -8,6 +8,7 @@ body,
     margin: 0;
     padding: 0;
     font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .muit-screen-small
@@ -41,19 +42,42 @@ body,
         "MENU WF MAP"
         "MENU WF FIT";
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: auto auto 1fr;
+    grid-template-columns: 50px auto 1fr;
 }
 
 .muit-panel-banner
 {
     grid-area: BAN;
-    background-color: rgb(0, 117, 53);
+    background-color: #007535;
+    color: #ffffff;
+    font-size: 1.2em;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
 }
 
 .muit-panel-menu
 {
     grid-area: MENU;
-    background-color: rgb(109, 117, 0);
+    background-color: #1ea75c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.muit-panel-menu img
+{
+    height: 25px;
+    margin: 10px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.muit-panel-menu img:hover
+{
+    opacity: 0.8;
 }
 
 .muit-panel-map
@@ -72,4 +96,10 @@ body,
 {
     grid-area: FIT;
     background-color: rgb(0, 225, 255);
+}
+
+.muit-banner-logo
+{
+    height: 30px;
+    margin: auto;
 }
