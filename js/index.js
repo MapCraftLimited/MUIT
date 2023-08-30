@@ -1,36 +1,63 @@
-let vueApp = Vue.createApp(
+require(
+[
+    "esri/Map",
+    "esri/views/MapView"
+],
+(
+    Map,
+    MapView
+) =>
 {
-    data()
+    let vueApp = Vue.createApp(
     {
-        return {
-            screen:
-            {
-                small: false,
-                portrait: false
-            }
-        };
-    },
-
-    mounted()
-    {
-        this.init();
-    },
-
-    methods:
-    {
-        init()
+        data()
         {
-            this.detectScreenInfo();
-            window.addEventListener("orientationchange", () => this.detectScreenInfo());
-            window.addEventListener("resize", () => this.detectScreenInfo());
+            return {
+                screen:
+                {
+                    small: false,
+                    portrait: false
+                }
+            };
         },
 
-        detectScreenInfo()
+        mounted()
         {
-            this.screen.portrait = window.screen.height > window.screen.width;
-            this.screen.small = (this.screen.portrait ? window.screen.width : window.screen.height) < 1000;
-        }
-    }
-});
+            this.init();
+        },
 
-vueApp.mount("#app");
+        methods:
+        {
+            init()
+            {
+                this.detectScreenInfo();
+                window.addEventListener("orientationchange", () => this.detectScreenInfo());
+                window.addEventListener("resize", () => this.detectScreenInfo());
+
+                this.setupMap();
+            },
+
+            detectScreenInfo()
+            {
+                this.screen.portrait = window.screen.height > window.screen.width;
+                this.screen.small = (this.screen.portrait ? window.screen.width : window.screen.height) < 1000;
+            },
+
+            setupMap()
+            {
+                const map = new Map({
+                basemap: "topo-vector"
+                });
+
+                const view = new MapView({
+                container: "map",
+                map: map,
+                zoom: 10,
+                center: [15, 65] // longitude, latitude
+                });
+            }
+        }
+    });
+
+    vueApp.mount("#app");
+});

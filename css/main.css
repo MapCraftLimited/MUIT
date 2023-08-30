@@ -1,3 +1,10 @@
+:root
+{
+    --calcite-ui-brand: #1ea75c;
+    --calcite-ui-brand-hover: #1ea75c;
+    --calcite-ui-brand-press: #1ea75c;
+}
+
 html,
 body,
 #app,
@@ -7,7 +14,7 @@ body,
     width: 100%;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -83,23 +90,79 @@ body,
 .muit-panel-map
 {
     grid-area: MAP;
-    background-color: blue;
 }
 
 .muit-panel-workflow
 {
     grid-area: WF;
-    background-color: crimson;
+    background-color: #ffffff;
+    width: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-right: 1px solid #d1d1d1;
 }
 
 .muit-panel-fit
 {
     grid-area: FIT;
-    background-color: rgb(0, 225, 255);
+    max-height: 300px;
+}
+
+.muit-panel-fit table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.muit-panel-fit table th
+{
+    background-color: #1ea75c;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.muit-panel-fit table td
+{
+    padding: 2px 5px;
+    text-align: center;
+}
+
+.muit-panel-fit table tr:nth-child(odd) td
+{
+    background-color: #d2edde;
 }
 
 .muit-banner-logo
 {
     height: 30px;
     margin: auto;
+}
+
+.muit-workflow-title
+{
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.muit-workflow-buttons
+{
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    margin-top: 20px;
+}
+
+#map
+{
+    height: 100%;
+    width: 100%;
+}
+
+.esri-view .esri-view-surface--touch-none:focus::after
+{
+    outline: none !important;
 }

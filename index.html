@@ -11,8 +11,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css" />
+        <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.6.1/calcite.css" />
         <link rel="stylesheet" href="css/main.css">
 
+        <script src="https://js.arcgis.com/4.27/"></script>
+        <script type="module" src="https://js.arcgis.com/calcite-components/1.6.1/calcite.esm.js"></script>
         <script src="js/jquery.js"></script>
         <script src="js/vue.js"></script>
     </head>
@@ -24,12 +28,42 @@
                     <div>Small Woodland Grant Scheme</div>
                 </div>
                 <div class="muit-panel-menu">
-                    <img src="images/layers.svg" />
                     <img src="images/workflow.svg" />
+                    <img src="images/layers.svg" />
                 </div>
-                <div class="muit-panel-map">MAP MAP MAP</div>
-                <div class="muit-panel-workflow">WF WF WF WF WF</div>
-                <div class="muit-panel-fit">FIT FIT FIT</div>
+                <div class="muit-panel-map">
+                    <div id="map"></div>
+                </div>
+                <div class="muit-panel-workflow">
+                    <div class="muit-workflow-title">Make A Change</div>
+                    <div>
+                        Nunc nisi leo, mattis a mi vel, sagittis varius dolor. Nullam tincidunt rhoncus orci in dignissim. Donec quis vehicula massa, quis posuere metus. Sed congue hendrerit consectetur. Cras lacinia tempus porttitor. Donec accumsan feugiat libero at ullamcorper. Mauris tincidunt velit non massa iaculis, id gravida lacus placerat. Suspendisse nisi sapien, eleifend sed faucibus ut, euismod id diam.
+                    </div>
+                    <div class="muit-workflow-buttons">
+                        <calcite-button appearance="outline-fill">Cancel</calcite-button>
+                        <calcite-button>Next</calcite-button>
+                    </div>
+                </div>
+                <div class="muit-panel-fit">
+                    <table>
+                        <thead>
+                            <th>ID</th>
+                            <th>Area</th>
+                            <th>Land Type</th>
+                            <th>Common</th>
+                            <th>Shared</th>
+                        </thead>
+                        <tbody>
+                            <tr v-for="i in 10">
+                                <td>{{ i }}</td>
+                                <td>{{ i * 107 }}</td>
+                                <td>Grass Land</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
