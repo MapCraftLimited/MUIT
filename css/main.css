@@ -35,7 +35,7 @@ body,
         "BAN"
         "MAP"
         "FIT"
-        "WF"
+        "MP"
         "MENU";
     grid-template-rows: auto 1fr auto auto auto;
     grid-template-columns: 1fr;
@@ -46,8 +46,8 @@ body,
     display: grid;
     grid-template-areas:
         "BAN BAN BAN"
-        "MENU WF MAP"
-        "MENU WF FIT";
+        "MENU MP MAP"
+        "MENU MP FIT";
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 50px auto 1fr;
 }
@@ -74,12 +74,23 @@ body,
     align-items: center;
 }
 
-.muit-panel-menu img
+.muit-panel-menu div
 {
-    height: 25px;
-    margin: 10px;
     opacity: 1;
     cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+
+.muit-panel-menu div[active='1']
+{
+    border-right: 3px solid #007535;
 }
 
 .muit-panel-menu img:hover
@@ -92,9 +103,10 @@ body,
     grid-area: MAP;
 }
 
-.muit-panel-workflow
+.muit-panel-workflow,
+.muit-panel-layers
 {
-    grid-area: WF;
+    grid-area: MP;
     background-color: #ffffff;
     width: 300px;
     padding: 10px;

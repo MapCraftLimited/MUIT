@@ -17,7 +17,8 @@ require(
                 {
                     small: false,
                     portrait: false
-                }
+                },
+                activeMenuPanel: 0
             };
         },
 
@@ -45,15 +46,13 @@ require(
 
             setupMap()
             {
-                const map = new Map({
-                basemap: "topo-vector"
-                });
-
-                const view = new MapView({
-                container: "map",
-                map: map,
-                zoom: 10,
-                center: [15, 65] // longitude, latitude
+                let map = new Map({ basemap: "topo-vector" });
+                let view = new MapView(
+                {
+                    container: "map",
+                    map: map,
+                    zoom: 10,
+                    center: [15, 65]
                 });
             }
         }

@@ -28,13 +28,19 @@
                     <div>Small Woodland Grant Scheme</div>
                 </div>
                 <div class="muit-panel-menu">
-                    <img src="images/workflow.svg" />
-                    <img src="images/layers.svg" />
+                    <div v-bind:active="activeMenuPanel === 0 ? 1 : 0"><img src="images/layers.svg" v-on:click="activeMenuPanel = 0" /></div>                    
+                    <div v-bind:active="activeMenuPanel === 1 ? 1 : 0"><img src="images/workflow.svg" v-on:click="activeMenuPanel = 1" /></div>
                 </div>
                 <div class="muit-panel-map">
                     <div id="map"></div>
                 </div>
-                <div class="muit-panel-workflow">
+                <div class="muit-panel-layers" v-if="activeMenuPanel === 0">
+                    <div class="muit-workflow-title">Layer List</div>
+                    <div>
+                        Nunc nisi leo, mattis a mi vel, sagittis varius dolor. Nullam tincidunt rhoncus orci in dignissim. Donec quis vehicula massa, quis posuere metus. Sed congue hendrerit consectetur. Cras lacinia tempus porttitor. Donec accumsan feugiat libero at ullamcorper. Mauris tincidunt velit non massa iaculis, id gravida lacus placerat. Suspendisse nisi sapien, eleifend sed faucibus ut, euismod id diam.
+                    </div>
+                </div>
+                <div class="muit-panel-workflow" v-if="activeMenuPanel === 1">
                     <div class="muit-workflow-title">Make A Change</div>
                     <div>
                         Nunc nisi leo, mattis a mi vel, sagittis varius dolor. Nullam tincidunt rhoncus orci in dignissim. Donec quis vehicula massa, quis posuere metus. Sed congue hendrerit consectetur. Cras lacinia tempus porttitor. Donec accumsan feugiat libero at ullamcorper. Mauris tincidunt velit non massa iaculis, id gravida lacus placerat. Suspendisse nisi sapien, eleifend sed faucibus ut, euismod id diam.
